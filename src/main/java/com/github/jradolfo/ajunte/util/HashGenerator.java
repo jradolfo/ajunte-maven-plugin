@@ -9,9 +9,9 @@ public class HashGenerator {
 
 	/**
 	 * Computes the hash of the content using the selected algorithm.
-	 * @param content
-	 * @param hashAlgorithm
-	 * @return
+	 * @param content The file's content
+	 * @param hashAlgorithm The algorithm to be used to generate the hash
+	 * @return The generated hash in hex format
 	 */
     public static String computeHash(String content, String hashAlgorithm) {
         try {

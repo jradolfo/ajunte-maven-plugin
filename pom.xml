@@ -6,20 +6,20 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <name>bundler-maven-plugin</name>
+    <name>ajunte-maven-plugin</name>
     <description>Maven plugin for creating bundle package of js and css files in Maven project.</description>
 
-    <url>https://github.com/jradolfo/bundler-maven-plugin</url>
+    <url>https://github.com/jradolfo/ajunte-maven-plugin</url>
     <scm>
-        <connection>scm:git:git@github.com:jradolfo/bundler-maven-plugin.git</connection>
-        <url>scm:git:git@github.com:jradolfo/bundler-maven-plugin.git</url>
-        <developerConnection>scm:git:git@github.com:jradolfo/bundler-maven-plugin.git</developerConnection>
+        <connection>scm:git:git@github.com:jradolfo/ajunte-maven-plugin.git</connection>
+        <url>scm:git:git@github.com:jradolfo/ajunte-maven-plugin.git</url>
+        <developerConnection>scm:git:git@github.com:jradolfo/ajunte-maven-plugin.git</developerConnection>
         <tag>develop</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/jradolfo/bundler-maven-plugin/issues</url>
+        <url>https://github.com/jradolfo/ajunte-maven-plugin/issues</url>
     </issueManagement>
 
     <inceptionYear>2016</inceptionYear>
@@ -49,7 +49,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>            
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
@@ -110,7 +110,7 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <goalPrefix>bundler-maven-plugin</goalPrefix>
+                    <goalPrefix>ajunte</goalPrefix>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
                 <executions>
@@ -153,28 +153,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <!--
-                This goes to settings.xml
-                <servers>
-                    <server>
-                        <id>github</id>
-                        <username>GITHUB_USERNAME</username>
-                        <password>GITHUB_PASSWORD</password>
-                    </server>
-                </servers>
-                <profiles>
-                    <profile>
-                        <id>github</id>
-                        <activation>
-                            <activeByDefault>true</activeByDefault>
-                        </activation>
-                        <properties>
-                            <github.global.server>github</github.global.server>
-                        </properties>
-                    </profile>
-                </profiles>
-                -->
+            <plugin>              
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
@@ -217,6 +196,7 @@
             </plugins>
         </pluginManagement>
     </build>
+    
     <profiles>
         <profile>
             <id>run-its</id>
@@ -301,8 +281,8 @@
                                     <!--Check out here for this strange configuration: http://maven.apache.org/plugins/maven-gpg-plugin/usage.html-->
                                     <keyname>${gpg.keyname}</keyname>
                                     <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                                </configuration>
-                            </execution>
+								</configuration>                               
+                            </execution>                             
                         </executions>
                     </plugin>
                 </plugins>
