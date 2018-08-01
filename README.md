@@ -26,12 +26,12 @@ be. That's why the context path el expression becomes necessary.
 | --------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
 | inputFilePath         | The path of a file to be optimized                           | ${project.basedir}/src/main/resources/index.html 				  |
 | outputFilePath        | The output path of the optimized file                        | ${project.build.outputDirectory}/index.html     				  |
-| inputBaseDir          | The root path of application resources					   | ${project.basedir}/src/main/webapp/ 			  				  |		
-| outputBaseDir 	    | The root path to output processed resources				   | ${project.build.outputDirectory}/#{projec.finalName}/resources/  |
+| webappSourceDir          | The root path of application resources					   | ${project.basedir}/src/main/webapp/ 			  				  |		
+| webappTargetDir 	    | The root path to output processed resources				   | ${project.build.outputDirectory}/#{projec.finalName}/resources/  |
 | hashingAlgorithm      | The algorithm used to generated hash of the file content to be used in the output file name<br />Possible values: `MD5`(default), `SHA-1`, `SHA-256`, `SHA-384`, `SHA-512` | MD5 |
 | verbose               | Whether to enable detailed output of the bundling process<br />Default: `false` | true |
-| cssOptimizer          | The name of optimizer used to process CSS files.<br />Possible values: `simple` (default), `yui`, `none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
-| jsOptimizer           | The name of optimizer used to process CSS files.<br />Possible values: `simple` (default), `yui`, `none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
+| cssOptimizer          | The name of optimizer used to process CSS files.<br />Possible values: `YUI` (default), none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
+| jsOptimizer           | The name of optimizer used to process JS files.<br />Possible values: `YUI` (default), none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
 | munge                 | Should be `true` if the compressor should shorten local variable names when possible.<br />Only works if `jsOptimize` is set to`YUI`.<br />Default: `true` | true |
 | preserveAllSemiColons | Should be `true` if the compressor should preserve all semicolons in the code.<br />Only works if `jsOptimize` is set to`YUI`.<br />Default: `true` | true |
 | disableOptimizations  | Should be `true` if the compressor should disable all micro optimizations. <br />Only works if `jsOptimize` is set to`yui`.<br />Default: `true` | true |
@@ -86,7 +86,8 @@ Configure plugin:
             <configuration>             
 		  <inputFilePath>${project.basedir}/src/main/webapp/template/template.xhtml</inputFilePath>
 		  <outputFilePath>${processed.files.dir}/template/template.xhtml</outputFilePath>
-		  <webappSourceDir>${project.basedir}/src/main/webapp/</webappSourceDir>							  <webappTargetDir>${processed.files.dir}/</webappTargetDir>		
+		  <webappSourceDir>${project.basedir}/src/main/webapp/</webappSourceDir>
+		  <webappTargetDir>${processed.files.dir}/</webappTargetDir>		
             </configuration>
           </execution>
         </executions>
