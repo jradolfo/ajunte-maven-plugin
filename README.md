@@ -32,8 +32,8 @@ be. That's why the context path el expression becomes necessary.
 | verbose               | Whether to enable detailed output of the bundling process<br />Default: `false` | true |
 | cssOptimizer          | The name of optimizer used to process CSS files.<br />Possible values: `simple` (default), `yui`, `none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
 | jsOptimizer           | The name of optimizer used to process CSS files.<br />Possible values: `simple` (default), `yui`, `none`<br />When choosing `none`, no optimization shall be performed. Contents from input files will just be concatenated and saved into the output file. | simple |
-| munge                 | Should be `true` if the compressor should shorten local variable names when possible.<br />Only works if `jsOptimize` is set to`yui`.<br />Default: `true` | true |
-| preserveAllSemiColons | Should be `true` if the compressor should preserve all semicolons in the code.<br />Only works if `jsOptimize` is set to`yui`.<br />Default: `true` | true |
+| munge                 | Should be `true` if the compressor should shorten local variable names when possible.<br />Only works if `jsOptimize` is set to`YUI`.<br />Default: `true` | true |
+| preserveAllSemiColons | Should be `true` if the compressor should preserve all semicolons in the code.<br />Only works if `jsOptimize` is set to`YUI`.<br />Default: `true` | true |
 | disableOptimizations  | Should be `true` if the compressor should disable all micro optimizations. <br />Only works if `jsOptimize` is set to`yui`.<br />Default: `true` | true |
 
 # Use Case
@@ -84,11 +84,9 @@ Configure plugin:
                   <goal>process</goal>
             </goals>
             <configuration>             
-           	  <cssOptimizer>yui</cssOptimizer>
-		  <jsOptimizer>yui</jsOptimizer> 
-                  <inputFilePah>${project.basedir}/src/main/webapp/templates/template.html</inputFilePah>
-	          <outputFilePath>${processed.files.dir}/templates/template.html</outputFilePath>
-	          <outputBaseDir>${processed.files.dir}/</outputBaseDir>			
+		  <inputFilePath>${project.basedir}/src/main/webapp/template/template.xhtml</inputFilePath>
+		  <outputFilePath>${processed.files.dir}/template/template.xhtml</outputFilePath>
+		  <webappSourceDir>${project.basedir}/src/main/webapp/</webappSourceDir>							  <webappTargetDir>${processed.files.dir}/</webappTargetDir>		
             </configuration>
           </execution>
         </executions>
