@@ -75,18 +75,18 @@ Configure plugin:
 
       <plugin>
         <groupId>com.github.jradolfo</groupId>
-        <artifactId>bundler-maven-plugin</artifactId>
-        <version>1.2</version>
+        <artifactId>ajunte-maven-plugin</artifactId>
+        <version>0.1</version>
         <executions>
           <execution>
             <id>bundle</id>
             <goals>
-              <goal>process</goal>
+                  <goal>process</goal>
             </goals>
             <configuration>             
            	  <cssOptimizer>yui</cssOptimizer>
-			  <jsOptimizer>yui</jsOptimizer> 
-              <inputFilePah>${project.basedir}/src/main/webapp/templates/template.html</inputFilePah>
+		  <jsOptimizer>yui</jsOptimizer> 
+                  <inputFilePah>${project.basedir}/src/main/webapp/templates/template.html</inputFilePah>
 	          <outputFilePath>${processed.files.dir}/templates/template.html</outputFilePath>
 	          <outputBaseDir>${processed.files.dir}/</outputBaseDir>			
             </configuration>
